@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="saveData()"> 点我存储本地数据</button>
+    <br>
+    <br>
+    <button onclick="readData()"> 点我读取本地数据</button>
+    <br>
+    <br>
+    <button onclick="deleData()"> 点我删除本地数据</button>
+    <br>
+    <br>
+    <button onclick="deleteAllData()"> 点我清空本地数据</button>
+    <br>
+    <br>
+
+</body>
+<script>
+    let person = { name: "JOJO", age: 20 }
+
+    function saveData() {
+        console.log('1');
+        window.localStorage.setItem('msg1', 'hello~!')
+        window.localStorage.setItem('msg2', 666)
+        window.localStorage.setItem('msg3', JSON.stringify(person))
+    }
+
+    function readData() {
+        console.log('1');
+        let i1 = window.localStorage.getItem('msg1')
+        let i2 = window.localStorage.getItem('msg2')
+        let i3 = window.localStorage.getItem('msg3')
+        console.log(i1, i2, JSON.parse(i3));
+    }
+
+    function deleData() {
+
+        window.localStorage.removeItem('msg1')
+        window.localStorage.removeItem('msg2')
+        window.localStorage.removeItem('msg3')
+    }
+
+    function deleteAllData() {
+        window.localStorage.clear()
+    }
+</script>
+
+</html>

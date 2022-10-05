@@ -1,0 +1,37 @@
+<template>
+  <div ref="ddiv">
+    <h1 v-text="msg"
+        ref="title"></h1>
+    <button ref="btn"
+            @click="showDOM">点我输出上方的DOM元素</button>
+    <school ref="sch"></school>
+  </div>
+
+</template>
+
+<script>
+import School from './component/School.vue'
+
+export default {
+  name: 'App',
+  components: {
+    School,
+  },
+  data() {
+    return {
+      msg: 'hello world',
+    }
+  },
+  methods: {
+    showDOM() {
+      console.log(this)
+      console.log(this.$refs.title) // 真实DOM元素
+      console.log(this.$refs.btn) // 真实DOM元素
+      console.log(this.$refs.sch) // School组件的实例对象（vc）
+    },
+  },
+}
+</script>
+
+<style>
+</style>
